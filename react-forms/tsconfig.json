@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"lib": ["DOM", "ES2015"],
+		"target": "es5",
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"jsx": "react",
+		"sourceMap": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"incremental": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
