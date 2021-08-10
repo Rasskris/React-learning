@@ -1,0 +1,30 @@
+.pageNumbers {
+  list-style: none;
+  display: flex;
+}
+
+.pagination__item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 6px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  outline: none;
+  color: #000000d9;
+  text-decoration: none;
+  cursor: pointer;
+  &.active {
+    background-color: #7c0;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.pageNumbers li button:focus {
+  outline: none;
+}
