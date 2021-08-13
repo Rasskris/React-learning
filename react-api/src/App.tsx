@@ -1,49 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, useLocation, Switch } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './App.scss';
-import { SearchContainer, RecipesList, useFetch, Pagination, PreLoader } from './components';
-import { ISearchParams } from './interfaces';
-import { initSearchState } from './constants';
+import { Home, About, RecipeDetails, NotFound } from './pages';
+import { Header } from './components';
 
 const App = (): JSX.Element => {
-  const [numOfCurrentPage, setNumOfCurrentPage] = useState(1);
-  const [searchParams, setSearchParams] = useState<ISearchParams>(initSearchState);
-
-  const { countItemsPerPage, searchString, searchParameter } = searchParams;
-
-  const changeNumOfCurrentPage = (numOfPage: number) => {
-    console.log('changeNumber', numOfPage);
-    setNumOfCurrentPage(numOfPage);
-  };
-
-  const changeSearchParams = (newSearchParams: Partial<ISearchParams>) => {
-    setSearchParams((prevState) => ({
-      ...prevState,
-      ...newSearchParams,
-    }));
-    console.log('changeSearchParams');
-  };
-
-  const { data, error, isPending } = useFetch({
-    searchString,
-    searchParameter,
-    numOfCurrentPage,
-    countItemsPerPage,
-  });
-  console.log(data);
+  const location = useLocation();
   return (
     <div className="App">
-      <SearchContainer changeSearchParams={changeSearchParams} />
-      {isPending && <PreLoader />}
-      {error}
-      {data && <RecipesList data={data} />}
-      {data && (
-        <Pagination
-          countItems={Number(data.count)}
-          countItemsPerPage={countItemsPerPage}
-          numOfCurrentPage={numOfCurrentPage}
-          changeNumOfCurrentPage={changeNumOfCurrentPage}
-        />
-      )}
+      <Header />
+      <div className="content">
+        <TransitionGroup className="page">
+          <CSSTransition key={location.key} classNames="page" timeout={300}>
+            <Switch location={location}>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/details/:id">
+                <RecipeDetails />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
     </div>
   );
 };
