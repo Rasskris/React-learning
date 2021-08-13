@@ -1,4 +1,4 @@
-import { IRecipe, ISearchParams } from './interfaces';
+import { IRecipe, ISearchParams, IRecipeFull } from './interfaces';
 
 export type SearchBarProp = {
   changeSearchParams: (searchParams: Partial<ISearchParams>) => void;
@@ -7,6 +7,7 @@ export type SearchBarProp = {
 export type Data = {
   count: string;
   hits: [{ recipe: IRecipe }];
+  recipe: IRecipeFull;
 };
 
 export type Response = {
