@@ -13,4 +13,8 @@ const getTotalPages = (countItems = 0, itemsPerPage: number): number[] => {
     .map((_, i) => i + 1);
 };
 
-export { getLastAndFirstIndex, getTotalPages };
+const parseUri = (uri: string): string => {
+  return uri.split('_')[1];
+};
+
+export { getLastAndFirstIndex, getTotalPages, parseUri };
