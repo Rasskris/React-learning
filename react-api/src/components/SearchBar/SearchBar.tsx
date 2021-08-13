@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchBar.scss';
 import { ISearchBar } from '../../interfaces';
 
-const placeholderText = 'Search recipes...';
+const placeholderText = 'Search e.g., kale salad, bean soup, chocolate...';
 
 const SearchBar = ({ handleChange, searchString }: ISearchBar): JSX.Element => {
   return (
