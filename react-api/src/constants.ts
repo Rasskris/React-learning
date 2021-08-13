@@ -1,5 +1,5 @@
 export const initSearchState = {
-  searchString: 'egg',
+  searchString: '',
   searchParameter: 'Breakfast',
   countItemsPerPage: 10,
 };
