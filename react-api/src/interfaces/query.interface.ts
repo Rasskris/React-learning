@@ -5,4 +5,5 @@ export default interface IQuery {
   countItemsPerPage: number;
   from: number;
   to: number;
+  id: string;
 }
