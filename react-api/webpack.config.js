@@ -84,13 +84,16 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".tsx"],
     modules: [
-      path.join(__dirname, 'node_modules')
+      // path.join(__dirname, 'node_modules')
+      path.resolve('./src'),
+      'node_modules',
   ],
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    writeToDisk: true,
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true,
     port: 5500,
   },
 };
