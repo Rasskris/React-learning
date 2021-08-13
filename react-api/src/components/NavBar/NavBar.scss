@@ -1,0 +1,16 @@
+.navBar {
+  width: 20%;
+  .links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    :nth-child(n) {
+      text-decoration: none;
+      margin-right: 5px;
+      color: rgb(110, 110, 126);
+    }
+    .active {
+      color: green;
+    }
+  }
+}
