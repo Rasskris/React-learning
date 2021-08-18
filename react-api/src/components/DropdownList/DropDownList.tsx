@@ -12,9 +12,9 @@ const DropDownList = ({ countItemsPerPage, handleChange }: IDropDownList): JSX.E
         value={countItemsPerPage}
         onChange={handleChange}
       >
-        <option value="9">10</option>
-        <option value="12">15</option>
-        <option value="15">20</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
       </select>
     </label>
   );
