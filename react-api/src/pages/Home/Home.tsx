@@ -1,7 +1,7 @@
 import React from 'react';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
-import { useGetRecipesQuery } from '../../services/recipe';
+import { useGetRecipesQuery } from '../../services';
 import { useAppSelector } from '../../hooks';
 import './Home.scss';
 import { SearchContainer, RecipesList, Pagination, PreLoader, ErrorMessage } from '../../components';
