@@ -28,30 +28,30 @@ $green-color: #7c0;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  .recipeFull__nutrition {
-    margin-top: 20px;
-    width: 80%;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
+}
+.recipeFull__nutrition {
+  margin-top: 20px;
+  width: 80%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}
+.nutrition__item {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &.calories,
+  &.servings {
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
   }
-  .nutrition__item {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &.calories,
-    &.servings {
-      border-right: 1px solid grey;
-      border-left: 1px solid grey;
-    }
-    :first-child {
-      color: $green-color;
-    }
+  :first-child {
+    color: $green-color;
   }
 }
 .ingredients {
@@ -89,5 +89,22 @@ $green-color: #7c0;
       background-color: $green-color;
       color: #fff;
     }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .recipeFull__info,
+  .ingredients,
+  .healthLabels {
+    width: 100%;
+  }
+  .recipeFull__wrapper1,
+  .recipeFull__wrapper2,
+  .recipeFull__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .recipeFull__nutrition {
+    width: 100%;
   }
 }
