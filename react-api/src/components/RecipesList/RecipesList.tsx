@@ -3,7 +3,7 @@ import './RecipesList.scss';
 import { Recipe } from '../Recipe';
 import { Data } from '../../types';
 
-const RecipesList = ({ data }: { data: Data }): JSX.Element => {
+const RecipesList = React.memo(({ data }: { data: Data }): JSX.Element => {
   const { hits: recipes } = data;
 
   return (
@@ -13,6 +13,7 @@ const RecipesList = ({ data }: { data: Data }): JSX.Element => {
       ))}
     </section>
   );
-};
+});
 
+RecipesList.displayName = 'RecipeList';
 export default RecipesList;
