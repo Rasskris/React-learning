@@ -7,13 +7,12 @@
   align-items: center;
   .search-params,
   .search-line {
-    width: 100%;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .search-params {
-    width: 50%;
     justify-content: space-between;
   }
   .search-line {
