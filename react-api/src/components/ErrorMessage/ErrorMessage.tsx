@@ -1,10 +1,10 @@
 import React from 'react';
 import './ErrorMessage.scss';
 
-const ErrorMessage = ({ errorMessage }: { errorMessage: string }): JSX.Element => {
+const ErrorMessage = ({ error }: { error: string | number }): JSX.Element => {
   return (
     <div className="errorMessage">
-      <h3 className="errorMessage__text">{errorMessage}</h3>
+      <h3 className="errorMessage__text">{error}</h3>
       <div className="errorMessage__img" />
     </div>
   );
