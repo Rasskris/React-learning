@@ -5,12 +5,33 @@
     justify-content: space-around;
     align-items: center;
     :nth-child(n) {
+      width: fit-content;
+      position: relative;
       text-decoration: none;
       margin-right: 5px;
       color: rgb(110, 110, 126);
+      padding-top: 10px;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        transition: transform 0.5s ease;
+      }
+      &:before {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: green;
+        transform: scaleX(0);
+      }
+      &:hover:before {
+        transform: scaleX(1);
+      }
     }
     .active {
       color: green;
+      font-weight: 500;
     }
   }
 }
