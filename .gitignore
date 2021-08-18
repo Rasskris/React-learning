@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Sistem files
+.DS_Store
+
+#Chore files
+wdyr.tsx
