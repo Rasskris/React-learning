@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
-import { useGetRecipeByIdQuery } from '../../services/recipe';
+import { useGetRecipeByIdQuery } from '../../services';
 import './RecipeDetails.scss';
 import { PreLoader, RecipeFull, ErrorMessage } from '../../components';
 
