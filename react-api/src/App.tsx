@@ -7,6 +7,7 @@ import { Header } from './components';
 
 const App = (): JSX.Element => {
   const location = useLocation();
+
   return (
     <div className="App">
       <Header />
