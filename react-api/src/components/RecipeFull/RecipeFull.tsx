@@ -2,7 +2,7 @@ import React from 'react';
 import './RecipeFull.scss';
 import { IRecipeFull } from '../../interfaces';
 
-const RecipeFull = ({ recipe }: { recipe: IRecipeFull }): JSX.Element => {
+const RecipeFull = React.memo(({ recipe }: { recipe: IRecipeFull }): JSX.Element => {
   const {
     image,
     label,
@@ -15,6 +15,7 @@ const RecipeFull = ({ recipe }: { recipe: IRecipeFull }): JSX.Element => {
     cuisineType,
     dishType,
   } = recipe;
+
   return (
     <article className="recipeFull">
       <h2 className="recipeFull__title">{label}</h2>
@@ -66,6 +67,7 @@ const RecipeFull = ({ recipe }: { recipe: IRecipeFull }): JSX.Element => {
       </div>
     </article>
   );
-};
+});
 
+RecipeFull.displayName = 'RecipeFull';
 export default RecipeFull;
