@@ -11,7 +11,7 @@ const Recipe = ({ recipe }: { recipe: IRecipe }): JSX.Element => {
   return (
     <div className="recipe">
       <img className="recipe__img" src={recipe.image} alt="Recipe" />
-      <h3 className="recipe__title">{label}</h3>
+      <p className="recipe__title">{label}</p>
       <div className="recipe__info">
         <span className="recipe__info-item calories">
           <span className="recipe__info-num">{calories.toFixed(0)}</span> calories
