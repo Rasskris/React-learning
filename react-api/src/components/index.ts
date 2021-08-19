@@ -8,3 +8,4 @@ export { RecipeFull } from './RecipeFull';
 export { ErrorMessage } from './ErrorMessage';
 export { Header } from './Header';
 export { ScrollToTop } from './ScrollToTop';
+export { SearchResult } from './SearchResult';
