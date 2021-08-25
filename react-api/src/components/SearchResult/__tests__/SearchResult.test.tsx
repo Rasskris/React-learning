@@ -1,12 +1,12 @@
 import React from 'react';
 import customRender from '../../../test-utils';
 import { SearchResult } from '..';
-import { responseWithMore, responseWithoutMore } from '../../../__fixtures__/response';
+import { responseWithMore, responseWithoutMore } from '../../../__fixtures__/responses';
 
 describe('SearchResult', () => {
   const searchString = 'egg';
 
-  test('render recipe-list and pagination when more result equal true', () => {
+  test('should render recipe-list and pagination when more result equal true', () => {
     const { getByTestId } = customRender(
       <SearchResult response={responseWithMore} searchString={searchString} />,
     );
@@ -17,7 +17,7 @@ describe('SearchResult', () => {
     expect(pagination).toBeInTheDocument();
   });
 
-  test('render error message when more result equal false', () => {
+  test('should render error message when more result equal false', () => {
     const { getByTestId } = customRender(
       <SearchResult response={responseWithoutMore} searchString={searchString} />,
     );
