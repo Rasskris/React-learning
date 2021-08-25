@@ -6,18 +6,12 @@ export type SearchBarProp = {
 };
 
 export type Data = {
-  count: string;
+  count: number;
   more: boolean;
   from: number;
   to: number;
-  hits: [{ recipe: IRecipe }];
+  hits: { recipe: IRecipe }[];
   recipe: IRecipeFull;
-};
-
-export type Response = {
-  data: Data | null;
-  error: string;
-  isPending: boolean;
 };
 
 export type MapActions = {
