@@ -1,7 +1,7 @@
 import React from 'react';
 import customRender from '../../../test-utils';
 import { Recipe } from '..';
-import { recipe } from '../../../__fixtures__/recipe';
+import { recipe } from '../../../mokeService/recipe';
 
 describe('Recipe component', () => {
   test('should render image', () => {

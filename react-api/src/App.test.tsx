@@ -3,7 +3,7 @@ import fetchMock from 'jest-fetch-mock';
 import userEvent from '@testing-library/user-event';
 import customRender, { fireEvent } from './test-utils';
 import App from './App';
-import { mokeResponse } from './__fixtures__/responses';
+import { response } from './mokeService/responses';
 
 beforeEach((): void => {
   fetchMock.resetMocks();
@@ -25,7 +25,7 @@ describe('App', () => {
 
     userEvent.type(searchBar, 'milk');
     fireEvent.submit(getByTestId('form'));
-    fetchMock.mockResponse(JSON.stringify(mokeResponse));
+    fetchMock.mockResponse(JSON.stringify(response));
 
     const recipesList = await findByTestId('recipes-list');
 

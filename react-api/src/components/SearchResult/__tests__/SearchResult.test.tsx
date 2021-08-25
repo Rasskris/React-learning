@@ -1,7 +1,7 @@
 import React from 'react';
 import customRender from '../../../test-utils';
 import { SearchResult } from '..';
-import { responseWithMore, responseWithoutMore } from '../../../__fixtures__/responses';
+import { responseWithMore, responseWithoutMore } from '../../../mokeService/responses';
 
 describe('SearchResult', () => {
   const searchString = 'egg';
