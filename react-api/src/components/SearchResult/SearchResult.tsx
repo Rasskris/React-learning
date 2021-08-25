@@ -5,7 +5,7 @@ import { ErrorMessage } from '../ErrorMessage';
 import { Data } from '../../types';
 
 type SearchResultProps = {
-  response: Data;
+  response: Omit<Data, 'recipe'>;
   searchString: string;
 };
 

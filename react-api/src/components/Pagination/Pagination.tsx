@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react';
 import './Pagination.scss';
 import { PaginationItem } from '../PaginationItem';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit } from '../../store/slices';
+import { setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit } from '../../slices';
 import { getTotalPages } from './helpers';
 
 const Pagination = ({ countItems }: { countItems: number }): JSX.Element => {
@@ -65,7 +65,7 @@ const Pagination = ({ countItems }: { countItems: number }): JSX.Element => {
   }
 
   return (
-    <ul className="pageNumbers">
+    <ul data-testid="pagination" className="pageNumbers">
       <PaginationItem
         handleClick={handlePrevButton}
         disabled={currentPage === totalPages[0]}

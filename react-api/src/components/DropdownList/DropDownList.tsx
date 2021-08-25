@@ -7,6 +7,7 @@ const DropDownList = ({ countItemsPerPage, handleChange }: IDropDownList): JSX.E
     <label htmlFor="countItemsPerPage">
       Count recipes per page:
       <select
+        data-testid="dropdown"
         className="dropdown-list"
         name="countItemsPerPage"
         value={countItemsPerPage}

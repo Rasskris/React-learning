@@ -11,13 +11,21 @@ const Recipe = ({ recipe }: { recipe: IRecipe }): JSX.Element => {
   return (
     <div className="recipe">
       <img className="recipe__img" src={recipe.image} alt="Recipe" />
-      <p className="recipe__title">{label}</p>
+      <p data-testid="title" className="recipe__title">
+        {label}
+      </p>
       <div className="recipe__info">
         <span className="recipe__info-item calories">
-          <span className="recipe__info-num">{calories.toFixed(0)}</span> calories
+          <span data-testid="calories" className="recipe__info-num">
+            {calories.toFixed(0)}
+          </span>
+          calories
         </span>
         <span className="recipe__info-item">
-          <span className="recipe__info-num">{ingredientLines.length}</span> ingredients
+          <span data-testid="ingredients" className="recipe__info-num">
+            {ingredientLines.length}
+          </span>
+          ingredients
         </span>
       </div>
       <Link to={`/details/${id}`}>Details...</Link>

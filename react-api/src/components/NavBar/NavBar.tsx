@@ -6,10 +6,10 @@ const NavBar = (): JSX.Element => {
   return (
     <nav className="navBar">
       <div className="links">
-        <NavLink exact activeClassName="active" to="/">
+        <NavLink exact data-testid="link-home" activeClassName="active" to="/">
           Home
         </NavLink>
-        <NavLink exact activeClassName="active" to="/about">
+        <NavLink exact data-testid="link-about" activeClassName="active" to="/about">
           About
         </NavLink>
       </div>

@@ -7,7 +7,7 @@ const descriptionText =
 
 const About = (): JSX.Element => {
   return (
-    <section className="about">
+    <section data-testid="about-page" className="about">
       <h2 className="about__title">{titleText}</h2>
       <p className="about__description">{descriptionText}</p>
       <div className="about__img" />

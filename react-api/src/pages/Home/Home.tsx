@@ -32,7 +32,7 @@ const Home = (): JSX.Element => {
   }
 
   return (
-    <div className="home">
+    <div data-testid="home-page" className="home">
       <SearchContainer />
       {isError && (
         <ErrorMessage error={(error as SerializedError).message || (error as FetchBaseQueryError).status} />

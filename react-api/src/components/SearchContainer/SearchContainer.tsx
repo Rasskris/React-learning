@@ -6,7 +6,7 @@ import {
   setSearchParameter,
   setCountItemsPerPage,
   resetPaginationState,
-} from '../../store/slices';
+} from '../../slices';
 import './SearchContainer.scss';
 import { Switcher } from '../Switcher';
 import { SearchBar } from '../SearchBar';
@@ -41,7 +41,7 @@ const SearchContainer = (): JSX.Element => {
   const { breakfast, lunch, dinner } = switcherNames;
 
   return (
-    <form onSubmit={handleSubmit} className="search-container">
+    <form onSubmit={handleSubmit} data-testid="form" className="search-container">
       <div className="search-line">
         <SearchBar handleChange={handleChange} searchString={searchBarValue} />
         <button className="search-button" type="submit" />
