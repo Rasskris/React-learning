@@ -3,14 +3,15 @@ import { Pagination } from '../Pagination';
 import { RecipesList } from '../RecipesList';
 import { ErrorMessage } from '../ErrorMessage';
 import { Data } from '../../types';
+import { useAppSelector } from '../../hooks';
 
 type SearchResultProps = {
   response: Omit<Data, 'recipe'>;
-  searchString: string;
 };
 
-const SearchResult = ({ response, searchString }: SearchResultProps): JSX.Element => {
+const SearchResult = ({ response }: SearchResultProps): JSX.Element => {
   const { more, from: firstIndex, to: lastIndex, count } = response;
+  const { searchString } = useAppSelector((state) => state.searchValues);
 
   if (more) {
     return (
