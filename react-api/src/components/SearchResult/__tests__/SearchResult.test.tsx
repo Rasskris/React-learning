@@ -4,12 +4,9 @@ import { SearchResult } from '..';
 import { responseWithMore, responseWithoutMore } from '../../../mokeService/responses';
 
 describe('SearchResult', () => {
-  const searchString = 'egg';
-
   test('should render recipe-list and pagination when more result equal true', () => {
-    const { getByTestId } = customRender(
-      <SearchResult response={responseWithMore} searchString={searchString} />,
-    );
+    const { getByTestId } = customRender(<SearchResult response={responseWithMore} />);
+
     const recipesList = getByTestId(/recipes-list/);
     const pagination = getByTestId(/pagination/);
 
@@ -18,9 +15,8 @@ describe('SearchResult', () => {
   });
 
   test('should render error message when more result equal false', () => {
-    const { getByTestId } = customRender(
-      <SearchResult response={responseWithoutMore} searchString={searchString} />,
-    );
+    const { getByTestId } = customRender(<SearchResult response={responseWithoutMore} />);
+
     const errorMessage = getByTestId(/error-message/);
 
     expect(errorMessage).toBeInTheDocument();
