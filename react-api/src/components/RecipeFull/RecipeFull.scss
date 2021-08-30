@@ -1,4 +1,5 @@
 $green-color: #7c0;
+
 .recipeFull {
   width: 100%;
   display: flex;
@@ -6,6 +7,7 @@ $green-color: #7c0;
   justify-content: flex-start;
   align-items: center;
   .recipeFull__title {
+    font-weight: 500;
     color: $green-color;
   }
 }
@@ -55,7 +57,8 @@ $green-color: #7c0;
   }
 }
 .ingredients {
-  width: 50%;
+  width: 45%;
+  margin-right: 15px;
   .ingredients__title {
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -68,11 +71,12 @@ $green-color: #7c0;
     align-items: flex-start;
     .ingredients__item {
       margin-bottom: 5px;
+      list-style: inside;
     }
   }
 }
 .healthLabels {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   .healthLabels__title {
