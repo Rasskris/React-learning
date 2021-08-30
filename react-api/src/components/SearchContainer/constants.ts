@@ -1,5 +1,5 @@
 export const switcherNames = {
   breakfast: 'Breakfast',
-  lunch: 'Lunch',
+  lunch: 'Snack',
   dinner: 'Dinner',
 };
