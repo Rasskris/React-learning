@@ -20,15 +20,13 @@
     "consistent-return": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
-    "linebreak-style": "off",
     "object-curly-newline": "off",
     "no-param-reassign": "warn",
     "prettier/prettier": [
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "all",
-        "endOfLine": "auto"
+        "trailingComma": "all"
       }
     ]
   },
@@ -36,5 +34,6 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "plugins": ["react"]
 }
