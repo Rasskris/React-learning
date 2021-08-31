@@ -3,8 +3,7 @@ import './Card.scss';
 import { IFormDataState } from '../../interfaces';
 
 const Card = ({ cardData }: { cardData: IFormDataState }): JSX.Element => {
-  const { firstName, lastName, email, country, dateOfBirth, contactChoice, agreeWithRules } =
-    cardData;
+  const { firstName, lastName, email, country, dateOfBirth, contactChoice, agreeWithRules } = cardData;
 
   return (
     <div className="card user">
