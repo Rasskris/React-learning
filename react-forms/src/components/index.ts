@@ -1,2 +1,9 @@
 export { Form } from './Form';
 export { Card } from './Card';
+export { FirstnameField } from './FirstnameField';
+export { LastnameField } from './LastnameField';
+export { EmailField } from './EmailField';
+export { DateOfBirthField } from './DateOfBirthField';
+export { CountryField } from './CountryField';
+export { ContactChoiceField } from './ContactChoiceField';
+export { CheckboxField } from './CheckboxField';

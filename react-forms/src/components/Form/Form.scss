@@ -48,27 +48,6 @@ $btn-color: grey;
   }
 }
 
-.form__select,
-.form__input-date {
-  padding: 5px;
-  margin-top: 5px;
-  height: 100%;
-  width: 36%;
-  font-size: 1rem;
-  border: none;
-  color: grey;
-  border-radius: 3px;
-}
-
-.form__input-radio {
-  margin-top: 5px;
-  margin-right: 10px;
-  background-color: black;
-  color: $text-color;
-}
-.form__input-checkbox {
-  background-color: black;
-}
 .form__btn {
   outline: none;
   border: none;
