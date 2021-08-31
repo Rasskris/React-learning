@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react';
 import './Pagination.scss';
 import { PaginationItem } from '../PaginationItem';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit } from '../../store/slices';
+import { setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit } from '../../slices';
 import { getTotalPages } from './helpers';
 
 const Pagination = ({ countItems }: { countItems: number }): JSX.Element => {

@@ -6,7 +6,7 @@ import {
   setSearchParameter,
   setCountItemsPerPage,
   resetPaginationState,
-} from '../../store/slices';
+} from '../../slices';
 import './SearchContainer.scss';
 import { Switcher } from '../Switcher';
 import { SearchBar } from '../SearchBar';

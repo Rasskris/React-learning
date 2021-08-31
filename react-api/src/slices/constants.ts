@@ -1,13 +1,4 @@
-type SearchValues = {
-  searchString: string;
-  searchParameter: string;
-  countItemsPerPage: number;
-};
-type Pagination = {
-  currentPage: number;
-  minPageNumberLimit: number;
-  maxPageNumberLimit: number;
-};
+import { SearchValues, Pagination } from '../types';
 
 export const initSearchState: SearchValues = {
   searchString: '',

@@ -31,3 +31,14 @@ export type PaginationItemProps = {
   disabled: boolean;
   isActive: boolean;
 };
+
+export type SearchValues = {
+  searchString: string;
+  searchParameter: string;
+  countItemsPerPage: number;
+};
+export type Pagination = {
+  currentPage: number;
+  minPageNumberLimit: number;
+  maxPageNumberLimit: number;
+};
