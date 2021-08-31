@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const CopyPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const mode = process.env.NODE_ENV || "development";
@@ -20,11 +19,6 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: "./src/index.html",
   }),
-  // new CopyPlugin({
-  //   // patterns: [
-  //   //   { from: 'src/assets', to: 'assets' },
-  //   // ],
-  // }),
 ];
 
 module.exports = {
