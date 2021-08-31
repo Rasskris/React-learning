@@ -1,5 +1,4 @@
-import { IFormDataState, IFormAction, IValidationResult } from '../../interfaces';
-import { actionType, initFormDataState } from './constants';
+import { IValidationResult } from '../../interfaces';
 
 interface ErrorsMap {
   [key: string]: { regExp: RegExp; textError: string };
@@ -27,18 +26,4 @@ const validateTextInput = (inputName: string, inputValue: string): IValidationRe
   return isValid ? { isValid, textError: '' } : { isValid, textError };
 };
 
-const formReducer = (state: IFormDataState, { type, payload }: IFormAction): IFormDataState => {
-  switch (type) {
-    case actionType.RESET:
-      return initFormDataState;
-    case actionType.CHANGE:
-      return {
-        ...state,
-        ...payload,
-      };
-    default:
-      throw new Error('Unknown action');
-  }
-};
-
-export { validateTextInput, formReducer };
+export { validateTextInput };
