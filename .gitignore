@@ -105,6 +105,3 @@ dist
 
 #Sistem files
 .DS_Store
-
-#Chore files
-wdyr.tsx
