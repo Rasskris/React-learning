@@ -1,9 +1,15 @@
 $green-color: #7c0;
 
 .search-bar {
-  width: 50%;
-  padding: 4px;
+  width: 100%;
+  height: 30px;
+  padding: 7px;
+  color: green;
+  font-size: 17px;
   outline: none;
   border: 2px solid $green-color;
   border-radius: 15px;
+  &:placeholder-shown {
+    font-size: 10px;
+  }
 }

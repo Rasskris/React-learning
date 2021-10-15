@@ -1,0 +1,23 @@
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .about__title,
+  .about__description {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .about__title {
+    color: rgb(49, 0, 128);
+  }
+  .about__img {
+    width: 100%;
+    max-width: 500px;
+    height: calc(100vh - 40px);
+    background-image: url(../../assets/unicorn-cook.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

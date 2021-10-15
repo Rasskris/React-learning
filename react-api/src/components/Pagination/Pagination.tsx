@@ -1,108 +1,84 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { MouseEvent } from 'react';
 import './Pagination.scss';
-import { PaginationProps } from '../../types';
-import { getTotalPages } from '../../helpers';
+import { PaginationItem } from '../PaginationItem';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit } from '../../slices';
+import { getTotalPages } from './helpers';
 
-const Pagination = ({
-  countItems,
-  numOfCurrentPage,
-  countItemsPerPage,
-  changeNumOfCurrentPage,
-}: PaginationProps): JSX.Element => {
+const Pagination = ({ countItems }: { countItems: number }): JSX.Element => {
   const pageNumberLimit = 5;
 
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-  const [maxPageNuberLimit, setMaxPageNumberLImit] = useState(5);
+  const { countItemsPerPage } = useAppSelector((state) => state.searchValues);
+  const { currentPage, minPageNumberLimit, maxPageNumberLimit } = useAppSelector((state) => state.pagination);
+
+  const dispatch = useAppDispatch();
 
   const totalPages = getTotalPages(countItems, countItemsPerPage);
 
   const handleClick = ({ target }: MouseEvent) => {
-    changeNumOfCurrentPage(Number((target as HTMLAnchorElement).id));
+    const currentNumber = Number((target as HTMLButtonElement).id);
+
+    dispatch(setCurrentPage(currentNumber));
   };
 
   const renderPageNumbers = totalPages.map((number) => {
-    if (number < maxPageNuberLimit + 1 && number > minPageNumberLimit) {
+    if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
       return (
-        <li key={String(number)}>
-          <a
-            href="#!"
-            id={String(number)}
-            onClick={handleClick}
-            className={numOfCurrentPage === number ? 'pagination__item active' : 'pagination__item'}
-          >
-            {number}
-          </a>
-        </li>
+        <PaginationItem
+          key={String(number)}
+          isActive={currentPage === number}
+          handleClick={handleClick}
+          textContent={String(number)}
+          id={String(number)}
+        />
       );
     }
     return null;
   });
 
   const handleNextButton = () => {
-    changeNumOfCurrentPage(numOfCurrentPage + 1);
+    dispatch(setCurrentPage(currentPage + 1));
 
-    if (numOfCurrentPage + 1 > maxPageNuberLimit) {
-      setMaxPageNumberLImit(maxPageNuberLimit + pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+    if (currentPage + 1 > maxPageNumberLimit) {
+      dispatch(setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit));
+      dispatch(setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit));
     }
   };
 
   const handlePrevButton = () => {
-    changeNumOfCurrentPage(numOfCurrentPage - 1);
+    dispatch(setCurrentPage(currentPage - 1));
 
-    if ((numOfCurrentPage - 1) % pageNumberLimit === 0) {
-      setMaxPageNumberLImit(maxPageNuberLimit - pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+    if ((currentPage - 1) % pageNumberLimit === 0) {
+      dispatch(setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit));
+      dispatch(setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit));
     }
   };
 
   let pageIncrementButton = null;
-  if (totalPages.length > maxPageNuberLimit) {
-    pageIncrementButton = (
-      <li>
-        <a href="#!" onClick={handleNextButton}>
-          ...
-        </a>
-      </li>
-    );
+  if (totalPages.length > maxPageNumberLimit) {
+    pageIncrementButton = <PaginationItem handleClick={handleNextButton} textContent="..." />;
   }
 
   let pageDecrementButton = null;
   if (minPageNumberLimit >= 1) {
-    pageDecrementButton = (
-      <li>
-        <a href="#!" onClick={handlePrevButton}>
-          ...
-        </a>
-      </li>
-    );
+    pageDecrementButton = <PaginationItem handleClick={handlePrevButton} textContent="..." />;
   }
 
   return (
-    <ul className="pageNumbers">
-      <li>
-        <button
-          type="button"
-          className="pagination__item"
-          onClick={handlePrevButton}
-          disabled={numOfCurrentPage === totalPages[0]}
-        >
-          &#5176;
-        </button>
-      </li>
+    <ul data-testid="pagination" className="pageNumbers">
+      <PaginationItem
+        handleClick={handlePrevButton}
+        disabled={currentPage === totalPages[0]}
+        textContent="<"
+      />
       {pageDecrementButton}
       {renderPageNumbers}
       {pageIncrementButton}
-      <li>
-        <button
-          type="button"
-          className="pagination__item"
-          onClick={handleNextButton}
-          disabled={numOfCurrentPage === totalPages[totalPages.length - 1]}
-        >
-          &#5171;
-        </button>
-      </li>
+      <PaginationItem
+        handleClick={handleNextButton}
+        disabled={currentPage === totalPages[totalPages.length - 1]}
+        textContent=">"
+      />
     </ul>
   );
 };

@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 
-// const CopyPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const mode = process.env.NODE_ENV || "development";
@@ -25,11 +24,6 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: "./src/index.html",
   }),
-  // new CopyPlugin({
-  //   // patterns: [
-  //   //   { from: 'src/assets', to: 'assets' },
-  //   // ],
-  // }),
 ];
 
 module.exports = {
@@ -84,13 +78,15 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".tsx"],
     modules: [
-      path.join(__dirname, 'node_modules')
+      path.resolve('./src'),
+      'node_modules',
   ],
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    writeToDisk: true,
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true,
     port: 5500,
   },
 };

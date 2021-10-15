@@ -1,16 +1,15 @@
-const getLastAndFirstIndex = (numOfCurrentPage: number, countItemsPerPage: number) => {
-  const indexOfLastItem = numOfCurrentPage * countItemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - countItemsPerPage;
-
-  return { indexOfFirstItem, indexOfLastItem };
+type LastAndFirstIndex = {
+  firstIndex: number;
+  lastIndex: number;
 };
 
-const getTotalPages = (countItems = 0, itemsPerPage: number): number[] => {
-  const numOfLastPage = Math.ceil(countItems / itemsPerPage);
+const getLastAndFirstIndex = (currentPage: number, countItemsPerPage: number): LastAndFirstIndex => {
+  const lastIndex = currentPage * countItemsPerPage;
+  const firstIndex = lastIndex - countItemsPerPage;
 
-  return Array(numOfLastPage)
-    .fill('')
-    .map((_, i) => i + 1);
+  return { firstIndex, lastIndex };
 };
 
-export { getLastAndFirstIndex, getTotalPages };
+const parseUri = (uri: string): string => uri.split('_')[1];
+
+export { getLastAndFirstIndex, parseUri };

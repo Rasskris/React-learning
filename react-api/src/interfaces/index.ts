@@ -4,3 +4,4 @@ export { default as IQuery } from './query.interface';
 export { default as ISearchBar } from './searchBar.interface';
 export { default as ISearchParams } from './searchParams.interface';
 export { default as IDropDownList } from './dropDownList.interface';
+export { default as IRecipeFull } from './recipeFull.interface';

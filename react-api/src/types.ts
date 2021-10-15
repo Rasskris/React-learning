@@ -1,23 +1,27 @@
-import { IRecipe, ISearchParams } from './interfaces';
+import { MouseEventHandler } from 'react';
+import { IRecipe, ISearchParams, IRecipeFull } from './interfaces';
 
 export type SearchBarProp = {
   changeSearchParams: (searchParams: Partial<ISearchParams>) => void;
 };
 
 export type Data = {
-  count: string;
-  hits: [{ recipe: IRecipe }];
+  count: number;
+  more: boolean;
+  from: number;
+  to: number;
+  hits: { recipe: IRecipe }[];
+  recipe: IRecipeFull;
 };
 
-export type Response = {
-  data: Data | null;
-  error: string;
-  isPending: boolean;
+export type MapActions = {
+  [key: string]: (value: string) => void;
 };
 
-export type PaginationProps = {
-  countItems: number;
-  numOfCurrentPage: number;
-  countItemsPerPage: number;
-  changeNumOfCurrentPage: (numOfPage: number) => void;
+export type PaginationItemProps = {
+  handleClick: MouseEventHandler;
+  textContent: string;
+  id: string;
+  disabled: boolean;
+  isActive: boolean;
 };
