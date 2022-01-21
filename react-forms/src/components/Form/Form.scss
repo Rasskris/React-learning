@@ -1,0 +1,74 @@
+$text-color: #fff;
+$background: #191919;
+$border-color: #343434;
+$focus-color: #ff9321;
+$btn-color: grey;
+
+.form {
+  width: 40%;
+  padding: 0.625rem;
+  margin: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: $text-color;
+  background-color: $background;
+  border-radius: 0.8125rem;
+  box-shadow: 0.625rem 0.625rem 1.875rem 0rem rgba(0, 0, 0, 1);
+}
+.form {
+  label {
+    padding-top: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  input,
+  select {
+    outline: none;
+  }
+}
+.form__error {
+  color: red;
+  font-size: 0.75rem;
+}
+.form__input {
+  display: inline-block;
+  padding: 0.5rem 0.9375rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  color: $text-color;
+  border: none;
+  border-bottom: 0.125rem solid $border-color;
+  &:focus {
+    border-bottom: 0.125rem solid $focus-color;
+  }
+}
+
+.form__btn {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $btn-color;
+  transition: all 0.25s ease-out;
+  &:hover {
+    cursor: pointer;
+    background-color: $focus-color;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $text-color;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-bottom: 0.125rem solid $border-color;
+  transition: background-color 5000s ease-in-out 0s;
+}
