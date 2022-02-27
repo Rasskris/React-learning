@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root,
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.root {
+  min-height: 100vh;
+  font-family: 'Finger Paint', cursive;
+  background-color: rgb(255, 241, 241);
+}

@@ -1,0 +1,21 @@
+.cards-container {
+  width: 80%;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 745px) {
+  .cards-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .cards-container {
+    grid-template-columns: 80%;
+  }
+}
